@@ -5,14 +5,17 @@ import '../constants.dart';
 class MyTextField extends StatelessWidget {
   final String hintText;
   final TextInputType inputType;
+  final controller;
 
-  const MyTextField({required this.hintText, required this.inputType});
+  const MyTextField(
+      {required this.hintText, required this.inputType, this.controller});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: TextField(
+        controller: this.controller,
         style: kBodyText.copyWith(color: Colors.white),
         keyboardType: inputType,
         textInputAction: TextInputAction.next,

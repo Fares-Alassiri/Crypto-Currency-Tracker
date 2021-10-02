@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import '../constants.dart';
 import '../screens/screen.dart';
-import 'package:flutter_svg_provider/flutter_svg_provider.dart';
-
+import '../widgets/my_password_field.dart';
+import '../widgets/my_text_field.dart';
 import 'Home.dart';
 
 HomePage p = HomePage();
@@ -19,21 +20,14 @@ class _SignInPageState extends State<SignInPage> {
   bool isPasswordVisible = true;
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kBackgroundColor,
         elevation: 0,
-        leading: IconButton(
+        leading: BackButton(
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Image(
-            width: 24,
-            color: Colors.white,
-            image: Svg('assets/images/back_arrow.svg'),
-          ),
         ),
       ),
       body: SafeArea(
@@ -67,17 +61,20 @@ class _SignInPageState extends State<SignInPage> {
                           SizedBox(
                             height: 60,
                           ),
-                          TextField(
+                          // TextField(
+                          //   controller: emailController,
+                          //   decoration: InputDecoration(labelText: "Email"),
+                          // ),
+                          MyTextField(
                             controller: emailController,
-                            decoration: InputDecoration(
-                              labelText: "Email"
-                            ),
+                            hintText: 'Email',
+                            inputType: TextInputType.emailAddress,
                           ),
-                          TextField(
+                          MyPasswordField(
                             controller: passwordController,
-                            decoration: InputDecoration(
-                                labelText: "Password"
-                            ),
+                            title: 'Enter your password',
+                            isPasswordVisible: isPasswordVisible,
+                            onTap: () {},
                           ),
                         ],
                       ),
@@ -111,8 +108,8 @@ class _SignInPageState extends State<SignInPage> {
                       height: 20,
                     ),
                     RaisedButton(
-                      onPressed:(){},
-                      child: Text ("sign in"),
+                      onPressed: () {},
+                      child: Text("sign in"),
                     ),
                   ],
                 ),
