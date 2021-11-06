@@ -5,7 +5,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 
 import '../constants.dart';
 
@@ -63,20 +62,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: kBackgroundColor,
-        elevation: 0,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Image(
-            width: 24,
-            color: Colors.white,
-            image: Svg('assets/images/back_arrow.svg'),
-          ),
-        ),
-      ),
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
@@ -92,6 +77,9 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          SizedBox(
+                            height: 78,
+                          ),
                           Text(
                             "Hi ${name.toUpperCase()}",
                             style: kHeadline,

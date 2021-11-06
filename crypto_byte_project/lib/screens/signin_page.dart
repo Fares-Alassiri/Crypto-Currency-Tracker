@@ -10,7 +10,6 @@ import '../screens/screen.dart';
 import '../widgets/my_password_field.dart';
 import '../widgets/my_text_field.dart';
 import '../widgets/widget.dart';
-import 'home.dart';
 
 class SignInPage extends StatefulWidget {
   @override
@@ -26,7 +25,7 @@ class _SignInPageState extends State<SignInPage> {
   Widget build(BuildContext context) {
     final firebaseUser = context.watch<User>();
     if (firebaseUser != null) {
-      return HomePage();
+      return MyHomeScreen();
     }
 
     return Scaffold(

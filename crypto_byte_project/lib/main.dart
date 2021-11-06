@@ -17,6 +17,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var textSize = Theme.of(context).textTheme;
     return MultiProvider(
       providers: [
         Provider<AuthenticationService>(
@@ -30,12 +31,29 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Sign In Sign Up Ui',
-        theme: ThemeData(
-          textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme),
+        theme: ThemeData.dark().copyWith(
+          textTheme: GoogleFonts.poppinsTextTheme(
+            Theme.of(context).textTheme.copyWith(
+                  headline4: textSize.headline4!.copyWith(
+                    color: Colors.white,
+                  ),
+                  headline5: textSize.headline5!.copyWith(color: Colors.white),
+                  headline6: textSize.headline6!.copyWith(
+                    color: Colors.white,
+                  ),
+                  subtitle1: textSize.subtitle1!.copyWith(
+                    color: Colors.white,
+                  ),
+                  subtitle2: textSize.subtitle2!.copyWith(
+                    color: Colors.grey,
+                  ),
+                  overline: textSize.overline!.copyWith(color: Colors.grey),
+                ),
+          ),
           scaffoldBackgroundColor: kBackgroundColor,
-          primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
+        themeMode: ThemeMode.dark,
         home: WelcomePage(),
       ),
     );
