@@ -1,20 +1,30 @@
+import 'package:crypto_byte_project/notification_service.dart';
 import 'package:crypto_byte_project/screens/screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-
+import 'package:crypto_byte_project/widgets/widgets.dart';
 import 'authentication_service.dart';
 import 'constants.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await NotificationService().init();
   runApp(MyApp());
+  //listenNotification();
+  await NotificationService().scheduleNotifications();
 }
 
+//void listenNotification() => NotificationService.onNotifications.stream.listen((payload) {Navigator.of(context).push(MaterialPageRoute<void>(builder: (context) => SecondScreen()))});
+
 class MyApp extends StatelessWidget {
+  CoinFavWidget Fav = new CoinFavWidget(
+    coins: [],
+  );
+
   @override
   Widget build(BuildContext context) {
     var textSize = Theme.of(context).textTheme;

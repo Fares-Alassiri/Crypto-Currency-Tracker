@@ -27,6 +27,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  url_launcher: ^5.4.0
   flutter:
     sdk: flutter
 
@@ -40,7 +41,6 @@ dependencies:
   flutter_svg: ^0.22.0
   flutter_bloc: any
   equatable: any
-  rxdart: any
   bloc: any
   dio: any
 
@@ -48,6 +48,8 @@ dependencies:
 
   syncfusion_flutter_charts: any
   intl: any
+  flutter_local_notifications: ^4.0.1+2
+  rxdart: any
 
 
 dev_dependencies:

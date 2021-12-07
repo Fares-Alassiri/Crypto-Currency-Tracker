@@ -23,8 +23,7 @@ class WelcomePage extends StatelessWidget {
                       child: Container(
                         width: MediaQuery.of(context).size.width * 0.8,
                         child: Image(
-                          image:
-                              AssetImage('assets/images/team_illustration.png'),
+                          image: AssetImage('assets/images/logo1.jpg'),
                         ),
                       ),
                     ),
@@ -32,7 +31,7 @@ class WelcomePage extends StatelessWidget {
                       height: 20,
                     ),
                     Text(
-                      "Enterprise team\ncollaboration.",
+                      "CryptoByte",
                       style: kHeadline,
                       textAlign: TextAlign.center,
                     ),
@@ -42,7 +41,7 @@ class WelcomePage extends StatelessWidget {
                     Container(
                       width: MediaQuery.of(context).size.width * 0.8,
                       child: Text(
-                        "Bring together your files, your tools, project and people.Including a new mobile and desktop application.",
+                        "Explore the crypto market place.\nPlan and analyze prices with ease :) ",
                         style: kBodyText,
                         textAlign: TextAlign.center,
                       ),

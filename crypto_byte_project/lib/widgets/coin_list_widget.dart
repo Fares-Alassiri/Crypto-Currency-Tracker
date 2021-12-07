@@ -23,7 +23,7 @@ class CoinListWidget extends StatelessWidget {
             padding:
                 const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
             child: Text(
-              "Crypto Currency",
+              "Crypto Markets",
               style: Theme.of(context).textTheme.headline5,
             ),
           ),
@@ -31,8 +31,8 @@ class CoinListWidget extends StatelessWidget {
             height: 8.0,
           ),
           Divider(
-            height: 10,
-            color: Colors.white,
+            height: 7,
+            color: Colors.grey,
           ),
           Expanded(
             child: ListView.builder(
@@ -61,7 +61,7 @@ class CoinListWidget extends StatelessWidget {
                     width: double.infinity,
                     padding: const EdgeInsets.symmetric(vertical: 4.0),
                     margin: const EdgeInsets.symmetric(
-                        vertical: 8.0, horizontal: 16.0),
+                        vertical: 8.0, horizontal: 11.0),
                     decoration: BoxDecoration(
                       color: Colors.grey.shade900,
                       borderRadius: BorderRadius.circular(16.0),

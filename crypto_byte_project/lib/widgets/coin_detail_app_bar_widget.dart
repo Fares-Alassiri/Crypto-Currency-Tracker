@@ -19,7 +19,7 @@ class CoinDetailAppBar extends StatelessWidget {
       pinned: true,
       snap: true,
       floating: true,
-      expandedHeight: 280.0,
+      expandedHeight: 55.0,
       flexibleSpace: FlexibleSpaceBar(
         title: Container(
           margin: const EdgeInsets.symmetric(vertical: 8.0),
@@ -32,21 +32,17 @@ class CoinDetailAppBar extends StatelessWidget {
               width: 40.0,
               child: CachedNetworkImage(
                 imageUrl: ((coinIconUrl + coin.symbol + ".png").toLowerCase()),
-                placeholder: (context, url) => CircularProgressIndicator(),
-                errorWidget: (context, url, error) =>
-                    SvgPicture.asset('assets/icons/dollar.svg'),
               ),
             ),
             title: Text(
-              coin.name + " " + coin.symbol + " #" + coin.cmcRank.toString(),
-              style: Theme.of(context).textTheme.headline5,
-              overflow: TextOverflow.ellipsis,
+              coin.name + " " + coin.symbol.toString(),
+              style: Theme.of(context).textTheme.headline6,
             ),
             // subtitle: Text(coin.slug),
           ),
         ),
         background: Image.asset(
-          "assets/images/${3}.png",
+          "assets/images/5.png",
           fit: BoxFit.cover,
         ),
         collapseMode: CollapseMode.parallax,

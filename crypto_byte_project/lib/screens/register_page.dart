@@ -73,7 +73,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           ),
                           MyTextField(
                             error: isEError
-                                ? 'Your email is wrong, try another email'
+                                ? 'An email exists, please try to sign in '
                                 : null,
                             controller: emailController,
                             hintText: 'Email',
@@ -81,7 +81,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           ),
                           MyPasswordField(
                             error: isPError
-                                ? 'Your password is week, try another password'
+                                ? 'Your password is weak, please try another again'
                                 : null,
                             text: 'Password',
                             controller: passwordController,

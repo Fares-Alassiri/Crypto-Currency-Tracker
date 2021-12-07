@@ -1,7 +1,12 @@
 import 'package:crypto_byte_project/models/fetchCoins_models/big_data_model.dart';
 import 'package:crypto_byte_project/repository/repository.dart';
+import 'package:crypto_byte_project/screens/second_screen.dart';
 import 'package:crypto_byte_project/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+
+import '../notification_service.dart';
+
+NotificationService a = NotificationService();
 
 class FirstScreen extends StatefulWidget {
   const FirstScreen({
@@ -20,7 +25,17 @@ class _FirstScreenState extends State<FirstScreen> {
     repository = Repository();
     _futureCoins = repository.getCoins();
     super.initState();
+
+    a.init();
+    listenNotification();
+    a.scheduleNotifications();
   }
+
+  void listenNotification() =>
+      NotificationService.onNotifications.stream.listen((payload) {
+        Navigator.of(context).push(
+            MaterialPageRoute<void>(builder: (context) => SecondScreen()));
+      });
 
   @override
   Widget build(BuildContext context) {
